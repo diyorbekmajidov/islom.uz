@@ -25,7 +25,7 @@ def main() -> None:
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(CallbackQueryHandler(prayer, pattern="sam"))
+    dp.add_handler(CallbackQueryHandler(prayer, pattern="👍"))
 
     updater.start_polling()
     updater.idle()
