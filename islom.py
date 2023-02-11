@@ -1,24 +1,10 @@
 from bs4 import BeautifulSoup
 import requests
 
-# url = f'https://islom.uz/'
-
-# def namoz_vaqtlari():
-#     response = requests.get(url)
-#     soup = BeautifulSoup(response.text, 'html.parser')  
-#     bomdod = soup.find('div', id = "tc1").text
-#     quyosh = soup.find('div', id = "tc2").text
-#     peshin = soup.find('div', id = "tc3").text
-#     asr = soup.find('div', id = "tc4").text
-#     shom = soup.find('div', id = "tc5").text
-#     xufton = soup.find('div', id = "tc6").text
-
-#     return bomdod,quyosh,peshin,asr,shom,xufton
-
 def prayer(city):
 	url = "https://aladhan.p.rapidapi.com/timingsByCity"
 
-	querystring = {"country":"Uzbekistan","city":"Smarkand"}
+	querystring = {"country":"Uzbekistan","city":f"{city}"}
 
 	headers = {
 		"X-RapidAPI-Key": "985cef3375msh3d3b11fac985565p1acdc4jsnbb0709f31f0b",
@@ -38,9 +24,6 @@ def prayer(city):
 	midnight = data["data"]["timings"]["Midnight"]
 	firstthird = data["data"]["timings"]["Firstthird"]
 	lastthird = data["data"]["timings"]["Lastthird"]
-	print(fajr,sunrise,dhuhr,asr,sunset,maghrib,isha,imsak,midnight,firstthird,lastthird)
+	
+	return {"fajr":fajr,"sunrise":sunrise,"dhuhr":dhuhr,"asr":asr,"sunset":sunset,"maghrib":maghrib,"isha":isha,"imsak":imsak,"midnight":midnight,"firstthird":firstthird,"lastthird":lastthird}
 
-# if __name__ == '__main__':
-#     namoz_vaqtlari()
-
-# print(namoz_vaqtlari())
