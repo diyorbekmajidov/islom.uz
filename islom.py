@@ -18,6 +18,7 @@ def prayer(city):
 	sunrise = data["data"]["timings"]["Sunrise"]
 	dhuhr = data["data"]["timings"]["Dhuhr"]
 	asr = data["data"]["timings"]["Asr"]
+	asr1 = f'{int(asr.split(":")[0])+1}:{asr.split(":")[1]}'
 	sunset = data["data"]["timings"]["Sunset"]
 	maghrib = data["data"]["timings"]["Maghrib"]
 	isha = data["data"]["timings"]["Isha"]
@@ -25,7 +26,6 @@ def prayer(city):
 	midnight = data["data"]["timings"]["Midnight"]
 	firstthird = data["data"]["timings"]["Firstthird"]
 	lastthird = data["data"]["timings"]["Lastthird"]
-	
+	main.text_to_image(city,fajr,sunrise,dhuhr,asr1,maghrib,sunset,isha,midnight,"Ubuntu-Medium.ttf", 30, (251,240,147))
 	# return {"fajr":fajr,"sunrise":sunrise,"dhuhr":dhuhr,"asr":asr,"sunset":sunset,"maghrib":maghrib,"isha":isha,"imsak":imsak,"midnight":midnight,"firstthird":firstthird,"lastthird":lastthird}
-	# main.text_to_image(fajr,)
-print(prayer("Samarkand"))
+# print(prayer("Tashkent"))
