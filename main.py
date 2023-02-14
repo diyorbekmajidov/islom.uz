@@ -1,15 +1,18 @@
 from PIL import Image, ImageDraw, ImageFont
 
 # TEXT TO IMAGE and pillow
-def text_to_image(text, fontname, fontsize, colorText, colorOutline, colorBackground):
-    img = Image.open("unnamed.jpg")
+def text_to_image(text, text1, fontname, fontsize, colorText, ):
+    img = Image.open("image.jpg")
+    w, h = img.size
     d = ImageDraw.Draw(img)
     font = ImageFont.truetype(fontname ,fontsize)
-    d.text((2, 2), text, fill=colorText, font=font)
-    img.save("image.png")
+    # image draw text size
 
     
-print(text_to_image("Salom Dunyo", "Ubuntu-Medium.ttf", 12, "black", "red", "white"))
+    img.save("image1.png")
+
+    
+print(text_to_image("", "Ubuntu-Medium.ttf", 30, (251,240,147),))
 
 # def getSize(txt, font):
 #     testImg = Image.new('RGB', (1, 1))

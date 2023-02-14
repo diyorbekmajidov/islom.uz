@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import main
 
 def prayer(city):
 	url = "https://aladhan.p.rapidapi.com/timingsByCity"
@@ -25,5 +26,6 @@ def prayer(city):
 	firstthird = data["data"]["timings"]["Firstthird"]
 	lastthird = data["data"]["timings"]["Lastthird"]
 	
-	return {"fajr":fajr,"sunrise":sunrise,"dhuhr":dhuhr,"asr":asr,"sunset":sunset,"maghrib":maghrib,"isha":isha,"imsak":imsak,"midnight":midnight,"firstthird":firstthird,"lastthird":lastthird}
-
+	# return {"fajr":fajr,"sunrise":sunrise,"dhuhr":dhuhr,"asr":asr,"sunset":sunset,"maghrib":maghrib,"isha":isha,"imsak":imsak,"midnight":midnight,"firstthird":firstthird,"lastthird":lastthird}
+	# main.text_to_image(fajr,)
+print(prayer("Samarkand"))
