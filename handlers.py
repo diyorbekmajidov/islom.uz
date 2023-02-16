@@ -25,13 +25,13 @@ def start(update: Update, context: CallbackContext) -> None:
     chat_id = update.message.chat.id
     first_name = update.message.from_user.first_name
     inlinekeyborad = InlineKeyboardMarkup([
-        [InlineKeyboardButton("Qoraqalpog'iston", callback_data = "👍 Karakalpakstan")],
-        [InlineKeyboardButton('Toshkent', callback_data = "👍:Tashkent"), InlineKeyboardButton("Surxondaryo", callback_data = "👍:Surkhandarya")],
-        [InlineKeyboardButton("Andijon", callback_data = '👍:Andijan'), InlineKeyboardButton("Farg'ona", callback_data = "👍:Ferghana")],
-        [InlineKeyboardButton("Namangan", callback_data = "👍:Namangan"), InlineKeyboardButton("Sirdaryo", callback_data = "👍:Syr Darya")],
-        [InlineKeyboardButton("Smarqand", callback_data = "👍:Samarkand"), InlineKeyboardButton("Qashqadaryo", callback_data = "👍:Kashkadarya")],
-        [InlineKeyboardButton("Buxoro", callback_data="👍:Bukhra"), InlineKeyboardButton("Xorazim", callback_data = "👍:Khorazim")],
-        [InlineKeyboardButton("Navoiy", callback_data = "👍:Navoi"), InlineKeyboardButton("Jizzax", callback_data = "👍:Jizzakh")],
+        [InlineKeyboardButton("Qoraqalpog'iston", callback_data = "👍:Нукус")],
+        [InlineKeyboardButton('Toshkent', callback_data = "👍:Тошкент"), InlineKeyboardButton("Surxondaryo", callback_data = "👍:Термиз")],
+        [InlineKeyboardButton("Andijon", callback_data = '👍:Андижон'), InlineKeyboardButton("Farg'ona", callback_data = "👍:Фарғона")],
+        [InlineKeyboardButton("Namangan", callback_data = "👍:Наманган"), InlineKeyboardButton("Sirdaryo", callback_data = "👍:Гулистон")],
+        [InlineKeyboardButton("Smarqand", callback_data = "👍:Самарқанд"), InlineKeyboardButton("Qashqadaryo", callback_data = "👍:Қарши")],
+        [InlineKeyboardButton("Buxoro", callback_data="👍:Бухоро"), InlineKeyboardButton("Xorazim", callback_data = "👍:Хива")],
+        [InlineKeyboardButton("Navoiy", callback_data = "👍:Навоий"), InlineKeyboardButton("Jizzax", callback_data = "👍:Жиззах")],
     ])
 
     text = f"Assalomu alaykum {first_name} IslomNur botimizga hush kilibsiz\n Namoz vaqtlarini bilish uchun viloyatni tanlang"
