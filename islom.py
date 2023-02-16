@@ -1,31 +1,44 @@
 from bs4 import BeautifulSoup
 import requests
-import main
+from main import text_to_image
 
-def prayer(city):
-	url = "https://aladhan.p.rapidapi.com/timingsByCity"
 
-	querystring = {"country":"Uzbekistan","city":f"{city}"}
+# parser url 
+def Namozregion():
+    url ='https://islom.uz/region/1'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    regions = soup.find('div', class_ = "custom-select")
+    print(regions)
+    region = {"region_name":[]}
+    k=0
+    for i in regions.find('select').find_all('option'):
+        k = +1
+        region["region_name"].append({f'{i.text}':i['value']})
+    return region
 
-	headers = {
-		"X-RapidAPI-Key": "985cef3375msh3d3b11fac985565p1acdc4jsnbb0709f31f0b",
-		"X-RapidAPI-Host": "aladhan.p.rapidapi.com"
-	}
 
-	response = requests.request("GET", url, headers=headers, params=querystring)
-	data = response.json()
-	fajr = data["data"]["timings"]["Fajr"]
-	sunrise = data["data"]["timings"]["Sunrise"]
-	dhuhr = data["data"]["timings"]["Dhuhr"]
-	asr = data["data"]["timings"]["Asr"]
-	asr1 = f'{int(asr.split(":")[0])+1}:{asr.split(":")[1]}'
-	sunset = data["data"]["timings"]["Sunset"]
-	maghrib = data["data"]["timings"]["Maghrib"]
-	isha = data["data"]["timings"]["Isha"]
-	imsak = data["data"]["timings"]["Imsak"]
-	midnight = data["data"]["timings"]["Midnight"]
-	firstthird = data["data"]["timings"]["Firstthird"]
-	lastthird = data["data"]["timings"]["Lastthird"]
-	main.text_to_image(city,fajr,sunrise,dhuhr,asr1,maghrib,sunset,isha,midnight,"Ubuntu-Medium.ttf", 30, (251,240,147))
-	# return {"fajr":fajr,"sunrise":sunrise,"dhuhr":dhuhr,"asr":asr,"sunset":sunset,"maghrib":maghrib,"isha":isha,"imsak":imsak,"midnight":midnight,"firstthird":firstthird,"lastthird":lastthird}
-# print(prayer("Tashkent"))
+def parser_url():
+	url = 'https://islom.uz/region/25'
+	response = requests.get(url)
+	soup = BeautifulSoup(response.text, 'html.parser')
+	bomdod = soup.find('div', id = "tc1").text
+	quyosh = soup.find('div', id = "tc2").text
+	peshin = soup.find('div', id = "tc3").text
+	asr = soup.find('div', id = "tc4").text
+	shom = soup.find('div', id = "tc5").text
+	xufton = soup.find('div', id = "tc6").text
+
+	text_to_image(bomdod, quyosh, peshin, asr, shom, xufton, "Ubuntu-Medium.ttf", 30, (251,240,147))
+
+print(parser_url())
+
+
+
+data ={'region_name': [
+    {'Андижон': '1'}, {'Бухоро': '4'}, {'Гулистон': '5'},  
+    {'Навоий': '14'}, {'Наманган': '15'}, {'Нукус': '16'}, 
+    {'Самарқанд': '18'}, {'Термиз': '74'}, {'Тошкент': '27'},  
+    {'Фарғона': '37'},  {'Хива': '21'},  {'Қарши': '93'}, 
+    {'Қарши': '25'}, ]
+    }
