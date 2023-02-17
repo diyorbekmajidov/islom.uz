@@ -18,8 +18,16 @@ def Namozregion():
     return region
 
 
-def parser_url():
-	url = 'https://islom.uz/region/25'
+def parser_url(city):
+	data ={'region_name': 
+    {'Андижон': '1', 'Бухоро': '4', 'Гулистон': '5',  
+    'Навоий': '14', 'Наманган': '15', 'Нукус': '16', 
+    'Самарқанд': '18', 'Термиз': '74', 'Тошкент': '27',  
+    'Фарғона': '37',  'Хива': '21',  'Қарши': '93', 
+    'Қарши': '25'}
+    }
+
+	url = f'https://islom.uz/region/{data["region_name"][city]}'
 	response = requests.get(url)
 	soup = BeautifulSoup(response.text, 'html.parser')
 	bomdod = soup.find('div', id = "tc1").text
@@ -31,14 +39,7 @@ def parser_url():
 
 	text_to_image("Samarqand",bomdod, quyosh, peshin, asr, shom, xufton, "Ubuntu-Medium.ttf", 30, (251,240,147))
 
-print(parser_url())
+# print(parser_url())
 
 
 
-data ={'region_name': [
-    {'Андижон': '1'}, {'Бухоро': '4'}, {'Гулистон': '5'},  
-    {'Навоий': '14'}, {'Наманган': '15'}, {'Нукус': '16'}, 
-    {'Самарқанд': '18'}, {'Термиз': '74'}, {'Тошкент': '27'},  
-    {'Фарғона': '37'},  {'Хива': '21'},  {'Қарши': '93'}, 
-    {'Қарши': '25'}, ]
-    }
