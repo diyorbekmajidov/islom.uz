@@ -7,7 +7,7 @@ def text_to_image(city,text, text1,text2,text3,text4,text5, fontname, fontsize, 
     d = ImageDraw.Draw(img)
     font = ImageFont.truetype(fontname ,fontsize)
     # image draw text size
-    d.text((w//4.3, h//4.3), city, fill=colorText, font=font, align="center")
+    d.text((w//4, h//4.3), city, fill=colorText, font=font, align="center")
     d.text((w//2, h//2.8), text, fill=colorText, font=font, align="center")
     d.text((w//2, h//2.4), text1, fill=colorText, font=font, align="center")
     d.text((w//2, h//2.1), text2, fill=colorText, font=font, align="center")
