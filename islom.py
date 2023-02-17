@@ -29,7 +29,7 @@ def parser_url():
 	shom = soup.find('div', id = "tc5").text
 	xufton = soup.find('div', id = "tc6").text
 
-	text_to_image(bomdod, quyosh, peshin, asr, shom, xufton, "Ubuntu-Medium.ttf", 30, (251,240,147))
+	text_to_image("Samarqand",bomdod, quyosh, peshin, asr, shom, xufton, "Ubuntu-Medium.ttf", 30, (251,240,147))
 
 print(parser_url())
 
