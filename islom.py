@@ -26,6 +26,10 @@ def parser_url(city):
     'Фарғона': '37',  'Хива': '21',  'Қарши': '93', 
     'Қарши': '25'}
     }
+	data_city = {"Андижон":"Andijon", "Бухоро":"Buxoro", "Гулистон":"Sirdaryo", 
+	"Навоий":"Navoiy", "Наманган":"Namangan", "Нукус":"Qoraqalpog'iston", 
+	"Самарқанд":"Samarqand", "Термиз":"Surxondaryo", "Тошкент":"Toshkent", 
+	"Фарғона":"Farg'ona", "Хива":"Xorazim", "Қарши":"Qashqadaryo"}
 
 	url = f'https://islom.uz/region/{data["region_name"][city]}'
 	response = requests.get(url)
@@ -37,7 +41,7 @@ def parser_url(city):
 	shom = soup.find('div', id = "tc5").text
 	xufton = soup.find('div', id = "tc6").text
 
-	text_to_image("Samarqand",bomdod, quyosh, peshin, asr, shom, xufton, "Ubuntu-Medium.ttf", 30, (251,240,147))
+	text_to_image(data_city[city],bomdod, quyosh, peshin, asr, shom, xufton, "Ubuntu-Medium.ttf", 30, (251,240,147))
 
 # print(parser_url())
 
