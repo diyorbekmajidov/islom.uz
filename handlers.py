@@ -29,7 +29,7 @@ def start(update: Update, context: CallbackContext) -> None:
         [InlineKeyboardButton('Toshkent', callback_data = "👍:Тошкент"), InlineKeyboardButton("Surxondaryo", callback_data = "👍:Термиз")],
         [InlineKeyboardButton("Andijon", callback_data = '👍:Андижон'), InlineKeyboardButton("Farg'ona", callback_data = "👍:Фарғона")],
         [InlineKeyboardButton("Namangan", callback_data = "👍:Наманган"), InlineKeyboardButton("Sirdaryo", callback_data = "👍:Гулистон")],
-        [InlineKeyboardButton("Smarqand", callback_data = "👍:Самарқанд"), InlineKeyboardButton("Qashqadaryo", callback_data = "👍:Қарши")],
+        [InlineKeyboardButton("Samarqand", callback_data = "👍:Самарқанд"), InlineKeyboardButton("Qashqadaryo", callback_data = "👍:Қарши")],
         [InlineKeyboardButton("Buxoro", callback_data="👍:Бухоро"), InlineKeyboardButton("Xorazim", callback_data = "👍:Хива")],
         [InlineKeyboardButton("Navoiy", callback_data = "👍:Навоий"), InlineKeyboardButton("Jizzax", callback_data = "👍:Жиззах")],
     ])
@@ -42,6 +42,6 @@ def prayer(update:Update, context:CallbackContext):
     bot = context.bot
     data = query.data
     city=data.split(":")[1]
-    islom.prayer(city)
-    bot.send_photo(chat_id=query.message.chat_id, photo=open('image1.png', 'rb'))
+    islom.parser_url(city)
+    bot.send_photo(chat_id=query.message.chat_id, photo=open('ima1.png', 'rb'))
     # query.edit_message_text(text=text,parse_mode=ParseMode.HTML)
