@@ -10,7 +10,8 @@ from telegram.ext import (
 )
 from handlers import (
     start,
-    prayer
+    prayer,
+    back,
 )
 TOKEN = f'6097820347:AAFk8qxkkUSqSVsuUlBTDEjdzMiWTWpA5HU'
 updater = Updater(TOKEN)
@@ -26,6 +27,7 @@ def main() -> None:
 
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CallbackQueryHandler(prayer, pattern="👍"))
+    dp.add_handler(CallbackQueryHandler(back, pattern="⬅️Orqaga"))
 
     updater.start_polling()
     updater.idle()
