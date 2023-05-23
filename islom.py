@@ -16,7 +16,7 @@ def Namozregion():
         k = +1
         region["region_name"].append({f'{i.text}':i['value']})
     return region
-print(Namozregion())
+# print(Namozregion())
 
 def parser_url(city):
 	data ={'region_name': 
@@ -24,12 +24,12 @@ def parser_url(city):
     'Навоий': '14', 'Наманган': '15', 'Нукус': '16', 
     'Самарқанд': '18', 'Термиз': '74', 'Тошкент': '27',  
     'Фарғона': '37',  'Хива': '21',  'Қарши': '93', 
-    'Қарши': '25'}
+    'Қарши': '25', 'Жиззах': '9'}
     }
 	data_city = {"Андижон":"Andijon", "Бухоро":"Buxoro", "Гулистон":"Sirdaryo", 
 	"Навоий":"Navoiy", "Наманган":"Namangan", "Нукус":"Qoraqalpog'iston", 
 	"Самарқанд":"Samarqand", "Термиз":"Surxondaryo", "Тошкент":"Toshkent", 
-	"Фарғона":"Farg'ona", "Хива":"Xorazim", "Қарши":"Qashqadaryo"}
+	"Фарғона":"Farg'ona", "Хива":"Xorazim", "Қарши":"Qashqadaryo",'Жиззах': 'Jizzax'}
 
 	url = f'https://islom.uz/region/{data["region_name"][city]}'
 	response = requests.get(url)
