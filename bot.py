@@ -15,6 +15,7 @@ from handlers import (
 )
 TOKEN = f'6097820347:AAFk8qxkkUSqSVsuUlBTDEjdzMiWTWpA5HU'
 updater = Updater(TOKEN)
+updater.bot.set_webhook('')
 
 def main() -> None:
     """
