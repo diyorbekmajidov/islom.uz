@@ -25,6 +25,12 @@ TOKEN = f'6097820347:AAFk8qxkkUSqSVsuUlBTDEjdzMiWTWpA5HU'
 def home():
     return 'Hello, World!'
 
+@app.route('/set')
+def set_webhook():
+    updater = Updater(TOKEN)
+    info = updater.bot.set_webhook('https://islomnur.pythonanywhere.com/')
+    return str(info)
+
 @app.route('/', methods=['POST'])
 def webhook():
     bot = Bot(token=TOKEN)

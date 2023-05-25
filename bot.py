@@ -16,6 +16,7 @@ from handlers import (
 TOKEN = f'6097820347:AAFk8qxkkUSqSVsuUlBTDEjdzMiWTWpA5HU'
 updater = Updater(TOKEN)
 updater.bot.set_webhook('https://islomnur.pythonanywhere.com/')
+print(updater.bot.get_webhook_info())
 
 def main() -> None:
     """
