@@ -21,6 +21,9 @@ from handlers import (
 )
 TOKEN = f'6097820347:AAFk8qxkkUSqSVsuUlBTDEjdzMiWTWpA5HU'
 
+@app.route('/home')
+def home():
+    return 'Hello, World!'
 
 @app.route('/', methods=['POST'])
 def webhook():
